@@ -1,0 +1,14 @@
+ul {
+  padding: 0px;
+  list-style: inside;
+}
+
+ul>li {
+  display: block;
+  position: relative;
+  float: left;
+}
+
+img {
+  width: 440px;
+}
