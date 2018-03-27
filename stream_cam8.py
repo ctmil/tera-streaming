@@ -10,8 +10,8 @@ from select import select
 from wsgiref.simple_server import WSGIServer, make_server, WSGIRequestHandler
 from SocketServer import ThreadingMixIn
 
-_http_port = 8087
-_stream_port = 10008
+_http_port = 9088
+_stream_port = 11008
 
 class MyWSGIServer(ThreadingMixIn, WSGIServer):
      pass

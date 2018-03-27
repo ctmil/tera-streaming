@@ -3,30 +3,196 @@
   <h1>
     Teravision Streaming Server  - {{ title }}!
   </h1>
+
 </div>
+
+
+<!--<script>
+var player = videojs('example-video');
+player.play();
+</script> -->
+<!--
+<video width="352" height="198" controls>
+    <source src="http://192.168.0.125/hls/playlist.m3u8" type="application/x-mpegURL">
+</video>-->
 <ul>
+<!--
   <li>
-    <h2>E1 CAM 1 -
-    <select id="cam1fps" camera="cam1" (change)="framerate($event)">
+    <h2>E2 CAM 1 - 132 <select id="cam2fps" camera="e1cam1" (change)="framerate($event)">
       <option value="5">5</option>
       <option value="10">10</option>
       <option value="15">15</option>
       <option value="15">20</option>
       <option value="15">25</option>
-    </select> <a href="http://admin:moldeoneo@192.168.1.13:19915/monitor2.htm" target="_blank">settings</a></h2>
-
-    <img src="http://127.0.0.1/e1cam1"/>
-  </li>
-  <li>
-    <h2>E1 CAM 2 - <a href="http://admin:moldeoneo@192.168.1.13:19915/monitor2.htm" target="_blank">settings</a></h2>
-    <img src="http://127.0.0.1/e1cam2"/>
-  </li>
-  <li>
-    <h2>E2 CAM 1 - <a href="http://admin:moldeoneo@192.168.1.13:19915/monitor2.htm" target="_blank">settings</a></h2>
+    </select><a href="http://admin:moldeoneo@192.168.0.132:62248/" target="_blank">settings</a></h2>
     <img src="http://127.0.0.1/e2cam1"/>
   </li>
+-->
   <li>
-    <h2>E2 CAM 2 - <a href="http://admin:moldeoneo@192.168.1.13:19915/monitor2.htm" target="_blank">settings</a></h2>
-    <img src="http://127.0.0.1/e2cam2"/>
+    <h2>E3 CAM 1 - 159
+    <select id="cam1fps" camera="e2cam1" (change)="framerate($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="15">20</option>
+      <option value="15">25</option>
+    </select> <a href="http://admin:moldeoneo@192.168.0.159:15270/" target="_blank">settings</a></h2>
+
+    <img src="http://127.0.0.1/e3cam1"/>
   </li>
+
+  <li>
+    <h2>E4 CAM 1 - 115 <select id="cam1fps" camera="e4cam1" (change)="framerate($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="15">20</option>
+      <option value="15">25</option>
+    </select><a href="http://admin:moldeoneo@192.168.0.115:62248/" target="_blank">settings</a></h2>
+    <img src="http://127.0.0.1/e4cam1"/>
+  </li>
+
+
+  <li>
+    <h2>#4 E4 CAM 2 - 148 <select id="cam1fps" camera="e4cam2" (change)="framerate($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="15">20</option>
+      <option value="15">25</option>
+    </select><a href="http://admin:moldeoneo@192.168.0.148:61696/" target="_blank">settings</a></h2>
+    <img src="http://127.0.0.1/e4cam2"/>
+  </li>
+
+
+  <li>
+    <h2>#5 E4 CAM 3 - 151 <select id="cam1fps" camera="e4cam3" (change)="framerate($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="15">20</option>
+      <option value="15">25</option>
+    </select><a href="http://admin:moldeoneo@192.168.0.151:59990/" target="_blank">settings</a></h2>
+    <img src="http://127.0.0.1/e4cam3"/>
+  </li>
+
+
+  <li>
+    <h2>#6 E5 CAM 1 / CAM 2 - 136 <select id="cam1fps" camera="e5cam2" (change)="framerate($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="15">20</option>
+      <option value="15">25</option>
+    </select><a href="http://admin:moldeoneo@192.168.0.136:59421/" target="_blank">settings</a></h2>
+    <img src="http://127.0.0.1/e5cam2"/>
+  </li>
+
+<li>
+    <h2>#7 E6 CAM 1 /Ddev/video0</h2>
+    <img src="http://127.0.0.1/e6cam1"/>
+  </li>
+  <li>
+    <h2>E3 CAM SOMBRA - 181
+    <a href="http://admin:moldeoneo@192.168.0.181:63159/" target="_blank">settings</a></h2>
+
+  </li>
+  <li>
+    <!--
+    <video id=example-video width=600 height=300 class="video-js vjs-default-skin" controls>
+      <source
+         src="http://192.168.0.125/hls/playlist.m3u8"
+         type="application/x-mpegURL">
+    </video>-->
+  </li>
+
 </ul>
+
+
+<!--
+<div>
+
+  <select (change)="changegroup($event)">
+
+    <option value="grupo1">grupoX</option>
+	<option value="grupo1">grupo1</option>
+    <option value="grupo2">grupo2</option>
+	<option value="grupo3">grupo3</option>
+    <option value="grupo4">grupo4</option>
+	<option value="grupo5">grupo5</option>
+    <option value="grupo6">grupo6</option>
+  </select>
+
+<h1>Grupo X</h1>
+  <button (click)="launch('grupoX','escena1')" >GrupoX - Escena1</button>
+  <button (click)="launch('grupoX','escena2')" >GrupoX - Escena2</button>
+  <button (click)="launch('grupoX','escena3')" >GrupoX - Escena3</button>
+  <button (click)="launch('grupoX','escena4')" >GrupoX - Escena4</button>
+  <button (click)="launch('grupoX','escena5')" >GrupoX - Escena5</button>
+  <button (click)="launch('grupoX','escena6')" >GrupoX - Escena6</button>
+  <button (click)="launch('grupoX','escena7')" >GrupoX - Escena7</button>
+  <hr>
+
+
+  <h1>Grupo 1</h1>
+  <button (click)="launch('grupo1','escena1')" >Grupo1 - Escena1</button>
+  <button (click)="launch('grupo1','escena2')" >Grupo1 - Escena2</button>
+  <button (click)="launch('grupo1','escena3')" >Grupo1 - Escena3</button>
+  <button (click)="launch('grupo1','escena4')" >Grupo1 - Escena4</button>
+  <button (click)="launch('grupo1','escena5')" >Grupo1 - Escena5</button>
+  <button (click)="launch('grupo1','escena6')" >Grupo1 - Escena6</button>
+  <button (click)="launch('grupo1','escena7')" >Grupo1 - Escena7</button>
+  <hr>
+
+<h1>Grupo 2</h1>
+  <button (click)="launch('grupo2','escena1')" >Grupo2 - Escena1</button>
+  <button (click)="launch('grupo2','escena2')" >Grupo2 - Escena2</button>
+  <button (click)="launch('grupo2','escena3')" >Grupo2 - Escena3</button>
+  <button (click)="launch('grupo2','escena4')" >Grupo2 - Escena4</button>
+  <button (click)="launch('grupo2','escena5')" >Grupo2 - Escena5</button>
+  <button (click)="launch('grupo2','escena6')" >Grupo2 - Escena6</button>
+  <button (click)="launch('grupo2','escena7')" >Grupo2 - Escena7</button>
+  <hr>
+
+<h1>Grupo 3</h1>
+  <button (click)="launch('grupo3','escena1')" >Grupo3 - Escena1</button>
+  <button (click)="launch('grupo3','escena2')" >Grupo3 - Escena2</button>
+  <button (click)="launch('grupo3','escena3')" >Grupo3 - Escena3</button>
+  <button (click)="launch('grupo3','escena4')" >Grupo3 - Escena4</button>
+  <button (click)="launch('grupo3','escena5')" >Grupo3 - Escena5</button>
+  <button (click)="launch('grupo3','escena6')" >Grupo3 - Escena6</button>
+  <button (click)="launch('grupo3','escena7')" >Grupo3 - Escena7</button>
+  <hr>
+
+<h1>Grupo 4</h1>
+  <button (click)="launch('grupo4','escena1')" >Grupo4 - Escena1</button>
+  <button (click)="launch('grupo4','escena2')" >Grupo4 - Escena2</button>
+  <button (click)="launch('grupo4','escena3')" >Grupo4 - Escena3</button>
+  <button (click)="launch('grupo4','escena4')" >Grupo4 - Escena4</button>
+  <button (click)="launch('grupo4','escena5')" >Grupo4 - Escena5</button>
+  <button (click)="launch('grupo4','escena6')" >Grupo4 - Escena6</button>
+  <button (click)="launch('grupo4','escena7')" >Grupo4 - Escena7</button>
+  <hr>
+
+<h1>Grupo 5</h1>
+  <button (click)="launch('grupo5','escena1')" >Grupo5 - Escena1</button>
+  <button (click)="launch('grupo5','escena2')" >Grupo5 - Escena2</button>
+  <button (click)="launch('grupo5','escena3')" >Grupo5 - Escena3</button>
+  <button (click)="launch('grupo5','escena4')" >Grupo5 - Escena4</button>
+  <button (click)="launch('grupo5','escena5')" >Grupo5 - Escena5</button>
+  <button (click)="launch('grupo5','escena6')" >Grupo5 - Escena6</button>
+  <button (click)="launch('grupo5','escena7')" >Grupo5 - Escena7</button>
+  <hr>
+
+<h1>Grupo 6</h1>
+  <button (click)="launch('grupo6','escena1')" >Grupo6 - Escena1</button>
+  <button (click)="launch('grupo6','escena2')" >Grupo6 - Escena2</button>
+  <button (click)="launch('grupo6','escena3')" >Grupo6 - Escena3</button>
+  <button (click)="launch('grupo6','escena4')" >Grupo6 - Escena4</button>
+  <button (click)="launch('grupo6','escena5')" >Grupo6 - Escena5</button>
+  <button (click)="launch('grupo6','escena6')" >Grupo6 - Escena6</button>
+  <button (click)="launch('grupo6','escena7')" >Grupo6 - Escena7</button>
+  <hr>
+<hr>
+</div>
+-->

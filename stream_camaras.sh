@@ -1,0 +1,9 @@
+./stream_cam1.sh
+./stream_cam2.sh
+./stream_cam3.sh
+./stream_cam4.sh
+./stream_cam5.sh
+./stream_cam6.sh
+./stream_cam7.sh
+./stream_cam8.sh
+./stream_cam9.sh

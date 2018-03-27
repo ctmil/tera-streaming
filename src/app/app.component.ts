@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Socket } from 'ng-socket-io';
-
+import * as videojshls from 'videojs-contrib-hls';
+import * as videojs from 'video.js';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -41,12 +42,51 @@ export class AppComponent {
 
   title = 'app';
   ips : any = {
-    'cam1': {
-      'ip': 'http://192.168.1.13:19915/'
+    'e2cam1': {
+      'ip': 'http://192.168.0.159:15270/'
+    },
+    'e3cam1': {
+      'ip': 'http://192.168.0.159:15270/'
+    },
+    'e4cam1': {
+      'ip': 'http://192.168.0.115:62248/'
+    },
+    'e4cam2': {
+      'ip': 'http://192.168.0.148:61696/'
+    },
+    'e4cam3': {
+      'ip': 'http://192.168.0.151:59990/'
+    },
+    'e5cam1': {
+      'ip': 'http://192.168.0.136:59421/'
+    },
+    'e5cam2': {
+      'ip': 'http://192.168.0.136:59421/'
     }
+
   }
 
-  constructor(private socket: Socket) { }
+  grupos : any = {
+   'grupoX': {},
+   'grupo1': {},
+   'grupo2': {},
+   'grupo3': {},
+   'grupo4': {},
+   'grupo5': {},
+   'grupo6': {},
+'grupo7': {}
+  };
+
+  constructor(private socket: Socket) {
+
+     console.log(videojs);
+     console.log(videojshls);
+   }
+
+  ngOnInit() {
+
+
+  }
 
   sendMessage(msg: string){
       console.log("emitting",msg);
@@ -69,9 +109,31 @@ export class AppComponent {
     return this.camera_control( base, 12, event.target.options[event.target.selectedIndex].value );
   }
 
+ changegroup( event) {
+   var grupoactual = event.target.options[event.target.selectedIndex].value;
+   console.log("changegroup",grupoactual);
+   this.socket.emit("changegroup", grupoactual);
+ }
+
+
+  launch( grupo, escena ) {
+   console.log(grupo,escena);
+   this.socket.emit("launch", {
+		msg: {
+                        grupo: grupo,
+			escena: escena
+		}
+	});
+  }
+
   getHttpHost(base,cgiUrl) : string
   {
     return (base+cgiUrl+"?loginuse=admin&loginpas=moldeoneo");
+  }
+
+  //http://192.168.1.13:19915/get_params.cgi
+  getParams( base ) {
+    return this.getHttpHost( base, "get_params.cgi");
   }
 
   //framerate;
@@ -85,6 +147,5 @@ export class AppComponent {
   url+='&' + new Date().getTime() + Math.random();
   console.log(url);
   window.open(url,"_blank");
-
   }
 }
