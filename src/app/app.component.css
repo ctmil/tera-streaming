@@ -7,8 +7,18 @@ ul>li {
   display: block;
   position: relative;
   float: left;
+  margin: 10px;
+font-size: 14px;
+  
 }
 
 img {
   width: 440px;
+  border: solid 2px #CCC;
 }
+
+a {
+ 
+ color: #FFF;
+}
+

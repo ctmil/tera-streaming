@@ -41,20 +41,32 @@ export class AppComponent {
 
   title = 'app';
   ips : any = {
-    'e1cam1': {
-      'ip': 'http://192.168.0.132:62248/'
-    },
-    'e1cam2': {
+    'e2cam1': {
       'ip': 'http://192.168.0.159:15270/'
     },
-    'e1cam3': {
+    'e3cam1': {
+      'ip': 'http://192.168.0.159:15270/'
+    },
+    'e4cam1': {
+      'ip': 'http://192.168.0.115:62248/'
+    },
+    'e4cam2': {
+      'ip': 'http://192.168.0.148:61696/'
+    },
+    'e4cam3': {
       'ip': 'http://192.168.0.151:59990/'
+    },
+    'e5cam1': {
+      'ip': 'http://192.168.0.136:59421/'
+    },
+    'e5cam2': {
+      'ip': 'http://192.168.0.136:59421/'
     }
 
   }
 
   grupos : any = {
-   'grupoX': {},   
+   'grupoX': {},
    'grupo1': {},
    'grupo2': {},
    'grupo3': {},
@@ -92,14 +104,14 @@ export class AppComponent {
    console.log("changegroup",grupoactual);
    this.socket.emit("changegroup", grupoactual);
  }
-  
 
-  launch( grupo, escena ) {   
+
+  launch( grupo, escena ) {
    console.log(grupo,escena);
-   this.socket.emit("launch", { 
+   this.socket.emit("launch", {
 		msg: {
                         grupo: grupo,
-			escena: escena			
+			escena: escena
 		}
 	});
   }
