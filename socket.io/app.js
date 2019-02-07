@@ -39,8 +39,6 @@ io.on('connection', function (socket) {
     }
 
     //
-    
-   
 
 //    socket.emit('setid', { 
 //    
@@ -68,7 +66,7 @@ io.on('connection', function (socket) {
     socket.on('getid', function(iden ) {
 	if ( iden == "singrupo" || grupoactual=="grupoX" ) {
 		console.log('Cliente sin grupo: asignando');
-  
+
         var iden = {
  			grupo: grupoactual,
 			ip: socket.request.connection.remoteAddress,
@@ -79,7 +77,7 @@ io.on('connection', function (socket) {
 		 } );
 
          grupos[ iden.grupo ][iden.id] = socket;
-         
+
 	} else {
 		console.log('Cliente ya identificado', iden );
 		var idenOb = iden;
@@ -96,7 +94,7 @@ io.on('connection', function (socket) {
             if (user) {
               console.log("Found in group!", user.id);
               grupo[idenOb.id] = socket;
-              
+
             } else {
                grupo[idenOb.id] = socket;
                console.log("Setting socket in group!", idenOb.id);
@@ -121,17 +119,16 @@ io.on('connection', function (socket) {
 
     socket.emit('getid', {} );
 
-	
     socket.on('changegroup', function(newgroup) {
     	grupoactual = newgroup;
     });
 
-    socket.on('launch', function( msg ) { 
+    socket.on('launch', function( msg ) {
     	console.log( "launch", msg );
-		
+
     } );
 
-    socket.on('launch', function( msg ) { 
+    socket.on('launch', function( msg ) {
     	console.log( "launch", msg );
         //var launch = JSON.parse(msg);
         console.log(msg.msg.grupo,msg.msg.escena);
@@ -141,7 +138,7 @@ io.on('connection', function (socket) {
         }
     } );
 
-    // 
+    //
 
     socket.on('disconnect',function(){
       console.log("Disconnected ",socket.client.conn.id );

@@ -1,2 +1,1 @@
-gst-launch-1.0 -mve rtspsrc location=rtsp://admin:moldeoneo@192.168.0.151:10554/udp/av0_0 ! decodebin ! jpegenc quality=50 ! multifilesink location=lastframe4.jpg
-
+gst-launch-1.0 -e rtspsrc location=rtsp://admin:moldeoneo@192.168.0.148:10544/udp/av0_0 ! decodebin ! videocrop top=0 left=0 right=0 bottom=0 ! videoconvert ! capsfilter caps=video/x-raw,format=GRAY8 ! videoconvert ! x264enc ! mp4mux ! filesink location=/home/terastreamer/teravision/cam4_b.mp4

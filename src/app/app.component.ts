@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Socket } from 'ng-socket-io';
-
+import * as videojshls from 'videojs-contrib-hls';
+import * as videojs from 'video.js';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
